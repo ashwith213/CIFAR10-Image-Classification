@@ -1,0 +1,71 @@
+# CIFAR-10 Image Classification using custom CNN
+
+> A PyTorch implementation of a convolutional neural network that classifies 32 × 32 colour images into ten categories.
+
+## Overview
+
+In this project, I built and trained a CNN from scratch on the CIFAR-10 dataset. The notebook covers the complete workflow: downloading and preprocessing data, defining the model, training it, and measuring its performance on the test set.
+
+**result: 74.71% test accuracy after 10 epochs.**
+
+## Demo details
+
+| Item | Details |
+| --- | --- |
+| Dataset | CIFAR-10 |
+| Framework | PyTorch + Torchvision |
+| Image size | 32 × 32 RGB |
+| Classes | 10 |
+| Optimizer | Adam |
+| Loss function | Cross-entropy loss |
+| Batch size | 64 |
+| Epochs | 10 |
+
+## Network design
+
+```text
+Input image (3 × 32 × 32)
+        ↓
+Conv2d: 3 → 32  + ReLU + MaxPool
+        ↓
+Conv2d: 32 → 64 + ReLU + MaxPool
+        ↓
+Conv2d: 64 → 128 + ReLU + MaxPool
+        ↓
+Flatten
+        ↓
+Linear: 2048 → 256 + ReLU
+        ↓
+Linear: 256 → 10
+        ↓
+Predicted CIFAR-10 class
+```
+
+## CIFAR-10 classes
+
+`airplane` · `automobile` · `bird` · `cat` · `deer` · `dog` · `frog` · `horse` · `ship` · `truck`
+
+## Repository structure
+
+```text
+.
+├── CNN.ipynb
+├── README.md
+├── requirements.txt
+└── data/                 # Created automatically; do not upload it
+```
+
+## Possible next steps
+
+1. Add image augmentation to the training transform.
+2. Add batch normalization and dropout.
+3. Track training loss and validation accuracy in plots.
+4. Display correct and incorrect predictions.
+5. Save and reload the trained weights.
+6. Benchmark the model against a transfer-learning approach.
+
+## Author
+
+**Pesarakayala Ashwith Reddy**
+
+Feel free to fork this project, suggest improvements, or connect with me on LinkedIn.
